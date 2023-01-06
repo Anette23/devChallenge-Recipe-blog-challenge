@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong,
+em {
+  color: var(--darker-color);
+}
+
+:root {
+  /* COLOURS */
+  --background-color: #ffffff;
+  --heading-color: #000000;
+  --darker-color: #333333;
+  --header-text-color: #4f4f4f;
+  --colorful-color: #f2994a;
+  --small-color: #bdbdbd;
+
+  /* FONTS */
+  --ff-body: "Montserrat", sans-serif;
+  --ff-headings: "Playfair Display", serif;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+}
+
+.grid {
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header h1 {
+  font-family: var(--ff-headings);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.header-text p {
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--header-text-color);
+  min-width: 300px;
+  max-width: 590px;
+}
+
+/* MAIN */
+main {
+  margin-bottom: 3rem;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.servings {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.servings .material-icons,
+.time-info .material-icons {
+  color: var(--colorful-color);
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  font-weight: 700;
+}
+
+.time-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.time-info .material-icons {
+  color: var(--header-text-color);
+}
+
+.servings small,
+.time-info small {
+  font-size: clamp(0.5rem, 4vw, 0.625rem);
+  font-weight: 700;
+  color: var(--small-color);
+  text-transform: uppercase;
+}
+
+.servings p,
+.time-info p {
+  font-size: clamp(0.625rem, 4vw, 0.875rem);
+  font-weight: 500;
+  color: var(--colorful-color);
+}
+
+.time-info p {
+  color: var(--darker-color);
+}
+
+fieldset {
+  max-width: 650px;
+  border: none;
+  line-height: 1.5;
+}
+
+.ingredients h2,
+.instructions h2 {
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+  font-weight: 700;
+  font-family: var(--ff-headings);
+  color: var(--darker-color);
+}
+
+.ingredients legend {
+  font-family: var(--ff-headings);
+  font-style: italic;
+  font-size: clamp(1rem, 4vw, 1.125rem);
+  font-weight: 400;
+  color: var(--darker-color);
+  padding: 2rem 0;
+}
+
+.ingredients label {
+  font-size: clamp(0.875rem, 4vw, 1rem);
+  font-weight: 400;
+  color: var(--header-text-color);
+  text-align: left;
+}
+
+.ingredients div {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.instructions {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+.instructions h2 {
+  margin-bottom: 2rem;
+}
+
+.instructions li {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--header-text-color);
+  margin-bottom: 2rem;
+}
+
+ol {
+  max-width: 750px;
+  counter-reset: steps;
+  list-style: none;
+  padding-left: 1rem;
+}
+
+ol li {
+  counter-increment: steps;
+  position: relative;
+}
+
+ol li::before {
+  content: counter(steps);
+  color: var(--background-color);
+  background: var(--colorful-color);
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--ff-headings);
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 0;
+  left: -50px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.875rem;
+  color: var(--darker-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+footer span {
+  font-weight: 700;
+}
+
+.footer-link {
+  color: var(--darker-color);
+}
+
+/* MEDIA QUERIES */
+@media (width >= 1000px) {
+  .grid {
+    padding: 3rem 5rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-top: 3rem;
+  }
+
+  aside {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    display: flex;
+    padding: 2rem 0;
+    border-radius: 12px;
+    align-items: center;
+    grid-area: 1 / 2 / 2 / 2;
+    margin: 0;
+  }
+
+  .time-info {
+    flex-direction: column;
+  }
+
+  .info {
+    margin-bottom: 1rem;
+  }
+
+  .ingredients {
+    grid-area: 1/ 1 / 3 / 3;
+  }
+}
